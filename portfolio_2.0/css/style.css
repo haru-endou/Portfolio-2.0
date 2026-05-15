@@ -528,8 +528,12 @@ footer .ctn-contact .ctn-logo-reseaux:hover .Floteur{
     header button#btn-menu{
         display: flex;
     }
+    #ctn-menu-mobile{
+        display: block;
+    }
     .hidden{
         display: none;
+        transform: translateX(100%) scale(0.5);
     }
     .fade-right{
         animation: fade-right 0.3s ease-in-out;
