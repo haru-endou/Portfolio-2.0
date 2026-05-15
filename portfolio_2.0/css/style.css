@@ -1,0 +1,564 @@
+:root{
+    --new-btn-background-color: white;
+    --new-text-color: black;
+    --photo-profil-mobile-size: 240px;
+    --mobile-skill-logo-size: 20px;
+    --pi: 0;
+}
+body{
+    background-color: black;
+    position: relative;
+    color: rgb(160, 160, 160);;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding-top: 30px;
+    padding-right: 0;
+    padding-left: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+header{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgb(60,60,60);
+    background-color: rgb(15,15,15);
+    padding: 1rem;
+    border-radius: 100px;
+    top: 12px;
+    right: 36px;
+    left: 36px;
+    z-index: 10;
+    animation: fade-up 1s ease-in-out;
+}
+@keyframes fade-up{
+    from{
+        transform: translateY(100%) scale(0.4);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0%) scale(1);
+        opacity: 1;
+    }
+}
+header .ctn-nom{
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding-left: 6px;
+    color: rgb(222, 222, 222)
+}
+
+header nav a{
+    color: rgb(160, 160, 160);
+    text-decoration: none;
+    margin-left: 12px;
+    margin-right: 12px;
+    text-transform: uppercase;
+    transition: all 0.15s;
+    cursor: pointer;
+}
+header nav a:hover {
+    color: rgb(222, 222, 222);
+}
+header button{
+    color: rgb(200, 200, 200);
+    background-color: var(--new-btn-background-color);
+    color: var(--new-text-color);
+    border: none;
+    display: none;
+}
+button{
+    font-weight: 600;
+    border-radius: 100px;
+    padding: 16px 22px;
+    cursor: pointer;
+}
+section{
+    margin: 80px 12px;
+    padding: 24px 8px;
+    height: max-content;
+}
+section h1{
+    color: rgb(222, 222, 222);
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 80px;
+}
+section#hero{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+section#hero .ctn-photo-profil{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+section#hero .box-photo{
+    width: calc(var(--photo-profil-mobile-size) * 2);
+    height: calc(var(--photo-profil-mobile-size) * 2);
+    border-radius: calc(var(--photo-profil-mobile-size));
+    overflow: hidden;
+    background-color: white;
+    animation: rotate-in 1s ease-in-out ;
+}
+@keyframes rotate-in{
+    0%{
+        transform: translateY(100%) scale(0.1) rotateY(180deg);
+        opacity: 0.1;
+    }50%{
+        transform: translateY(50%) scale(0.6) rotateY(90deg);
+        opacity: 0.6;
+    }
+    100%{
+        transform: translateY(0%) scale(1) rotateY(0deg);
+        opacity: 1;
+    }
+}
+section#hero .box-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+section#hero .ctn-desc-perso{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px;
+    animation: fade-in 1s ease-in-out;
+}
+@keyframes fade-in {
+    from{
+        transform: translateY(100%) scale(0.6);
+        opacity: 0.3;
+    }
+    to{
+        transform: translateY(0%) scale(1);
+        opacity: 1;
+    }
+}
+section#hero .ctn-desc-perso .salutation{
+    font-size: 28px;
+    padding: 0;
+    margin: 3px;
+}
+section#hero .ctn-desc-perso .travail{
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(222, 222, 222)
+}
+section#hero .ctn-desc-perso .ctn-boutton{
+    margin-top: 8px;
+}
+section#hero .ctn-desc-perso .ctn-boutton button{
+    margin-right: 20px;
+}
+#btn-contacter{
+    background-color: var(--new-btn-background-color);
+    color: var(--new-text-color);
+    border: none;
+}
+#btn-voir-projet{
+    color: rgb(200, 200, 200);
+    background-color: rgb(15,15,15);
+    border: 2px solid rgb(45,45,45);
+}
+@keyframes arranger-verticale{
+    from{
+        transform: translateY(50%) scale(0.5);
+        opacity: 0;
+    }to{
+        transform: translateY(0%) scale(1);
+        opacity: 1;
+    }
+}
+#projets #ctn-projets{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3%;
+    margin: 30px;
+}
+
+#projets #ctn-projets .box-projet{
+    position: relative;
+    cursor: pointer;
+}
+
+#projets #ctn-projets .box-projet .box-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#projets #ctn-projets .box-projet .box-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#projets #ctn-projets .box-projet .box-desc{
+    transform: translateY(-100%);
+   padding: 12px;
+   backdrop-filter: blur(4px);
+   border-radius: 20px;
+   background-color: rgba(255,255,255,0.2);
+   color: black;
+}
+#projets #ctn-projets .box-projet .box-desc .role-projet span{
+    padding: 16px 22px;
+    border: 2px solid black;
+    border-radius: 100px;
+}
+#projets #ctn-projets .box-projet .box-desc .role-projet{
+    margin-bottom: 32px;
+    font-size: 20px;
+}
+#projets #ctn-projets .box-projet .box-desc .desc{
+    color: black;
+}
+#projets #ctn-projets .box-projet .box-desc .titre-desc{
+    color: black;
+}
+
+#competences .contenu{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 16px;
+}
+#competences .ctn-competence {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 24px;
+}
+#competences .ctn-box-competence{
+    width: max-content;
+    height: max-content;
+    margin-bottom: 30px;
+    position: relative;
+}
+#competences .box-competence{
+    padding: 24px;
+    border-radius: 1000px;
+    background-color: black;
+}
+#competences .box-competence::before{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    content: "";
+    background-image: conic-gradient(white 0 calc(var(--score) * 1%), rgb(15,15,15) calc(var(--score) * 1%));
+    width: 120%;
+    height: 120%;
+    z-index: -3;
+    border-radius: 50%;
+}
+
+#competences .ctn-img{
+    width: calc(var(--mobile-skill-logo-size) * 4);
+    height: calc(var(--mobile-skill-logo-size) * 4);
+}
+#competences .ctn-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+#apropos #ctn-contenu{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    color: rgb(222, 222, 222);
+}
+#apropos #ctn-contenu .ctn-profil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    border-radius: 16px;
+    border: 2px solid rgb(60,60,60);
+}
+#apropos #ctn-contenu .ctn-profil .ctn-img-profil{
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: white;
+    margin-bottom: 36px;
+}
+#apropos #ctn-contenu .ctn-profil .ctn-nom{
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 1rem;
+}
+#apropos #ctn-contenu .ctn-profil .ctn-img-profil img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#apropos #ctn-contenu .ctn-profil  .ctn-reseaux{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 1rem;
+    width: 100%;
+}
+#apropos #ctn-contenu .ctn-profil  .ctn-reseaux .ctn-logo-reseaux{
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+}
+.git-hub{
+    background-color: white;
+    border-radius: 50px;
+    transition: all 0.15s;
+}
+.git-hub:hover{
+    transform: scale(1.1);
+}
+#apropos #ctn-contenu .ctn-profil  .ctn-reseaux .ctn-logo-reseaux img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#apropos #ctn-contenu .ctn-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#apropos #ctn-contenu .ctn-description .ctn-text-description{
+    border-radius: 1rem;
+    border: 2px solid rgb(60, 60, 60);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+#apropos #ctn-contenu .ctn-description .ctn-text-description h2{
+    font-weight: 500;
+}
+#apropos #ctn-contenu .ctn-description .ctn-text-description p{
+    color: rgb(160, 160, 160);
+
+}
+#apropos #ctn-contenu .ctn-description .ctn-parcours{
+    border-radius: 1rem;
+    border: 2px solid rgb(60, 60, 60);
+    padding: 1rem;
+    height: 100%;
+}
+#apropos #ctn-contenu .ctn-description .ctn-parcours h2{
+    font-weight: 500;
+}
+#apropos #ctn-contenu .ctn-description .ctn-parcours .box-parcours{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#apropos #ctn-contenu .ctn-description .ctn-parcours .parcour{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    border-right: 2px solid rgb(60, 60, 60);
+}
+#apropos #ctn-contenu .ctn-description .ctn-parcours .parcour span{
+    padding: 0.6rem;
+    margin: 1rem;
+    border-bottom: 2px solid rgb(60, 60, 60);
+}
+#apropos #ctn-contenu .ctn-description .ctn-parcours .parcour:last-child{
+    border-right: none;
+}
+footer{
+    background-color: rgb(15,15,15);
+    margin: 80px 0 0 0;
+    padding: 1px;
+}
+footer .ctn-nom{
+    text-align: center;
+    margin: 4rem 0;
+    font-size: 8rem;
+}
+footer .ctn-nom span{
+    background-image: linear-gradient(to bottom , rgb(222,222,222), rgb(20,20,20));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+footer .ctn-contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 1rem 0 3rem 0;
+}
+footer .ctn-contact .ctn-logo-reseaux{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+footer .ctn-contact .ctn-logo-reseaux:hover{
+    transform: scale(1.1);
+}
+footer .ctn-contact .ctn-logo-reseaux img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+footer .copyright{
+    text-align: center;
+    padding: 1rem;
+}
+footer .ctn-contact .ctn-logo-reseaux .Floteur{
+    color: white;
+    padding: 4px;
+    text-align: center;
+    position: absolute;
+    border-radius: 8px;
+    background-color: rgb(60, 60, 60);
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+footer .ctn-contact .ctn-logo-reseaux .Floteur span{
+    white-space: nowrap;
+}
+footer .ctn-contact .ctn-logo-reseaux:hover .Floteur{
+    display: grid;
+}
+#ctn-menu-mobile{
+    position: fixed;
+    top: 5rem;
+    left: 2rem; 
+    right: 2rem;
+    background-color: white;
+    border-radius: 1rem;
+    z-index: 10;
+}
+#ctn-menu-mobile nav{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+}
+#ctn-menu-mobile nav a{
+    text-decoration: none;
+    color: rgb(15,15,15);
+    padding: 0.3rem;
+    transition: all 0.15s;
+}
+#ctn-menu-mobile nav a:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    section#hero .box-photo {
+        width: calc(var(--photo-profil-mobile-size) * 1.5);
+        height: calc(var(--photo-profil-mobile-size) * 1.5);
+        border-radius: calc(var(--photo-profil-mobile-size));
+    }
+}
+@media (max-width: 767px) {
+    body{
+        font-size: 14px;
+    }
+    header nav{
+        display: none;
+    }
+    header{
+        right: 1rem;
+        left: 1rem;
+        padding: 0.4rem;
+    }
+    section#hero {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    section#hero .box-photo {
+        width: calc(var(--photo-profil-mobile-size) * 0.8);
+        height: calc(var(--photo-profil-mobile-size) * 0.8);
+        border-radius: calc(var(--photo-profil-mobile-size));
+    }
+    #projets #ctn-projets {
+        grid-template-columns: 1fr;
+    }
+    #competences .contenu{
+        grid-template-columns: 1fr;
+    }
+    #apropos #ctn-contenu{
+        grid-template-columns: 1fr;
+    }
+    footer .ctn-nom {
+        font-size: 3rem;
+    }
+    footer .ctn-contact{
+        display: grid;
+        gap: 100px;
+        margin-top: 100px;
+    }
+    footer .ctn-contact .ctn-logo-reseaux{
+        animation: affiche-contact both;
+        animation-timeline: view(80% 0%);
+    }
+    footer .ctn-contact .ctn-logo-reseaux .Floteur{
+        display: flex;
+        flex-direction: column;
+    }
+    @keyframes affiche-contact{
+        from{
+            transform: translateY(100px) scale(0.5);
+            opacity: 0;
+        }
+        to{
+            transform: translateY(0px) scale(1);
+            opacity: 1;
+        }
+    }
+    header button{
+        display: flex;
+    }
+    .hidden{
+        display: none;
+    }
+    .fade-right{
+        animation: fade-right 0.3s ease-in-out;
+    }
+    @keyframes fade-right{
+        from{
+            transform: translateX(100%) scale(0.5);
+            opacity: 0.5;
+            filter: blur(16px);
+        }
+        to{
+            transform: translateX(0%) scale(1);
+            opacity: 1;
+            filter: blur(0px);
+        }
+    }
+    .fade-right-reverse {
+        animation: fade-right-reverse 0.3s ease-in-out;
+    }
+
+    @keyframes fade-right-reverse {
+        from {
+            transform: translateX(0%) scale(1);
+            opacity: 1;
+            filter: blur(0px);
+        }
+        to {
+            transform: translateX(100%) scale(0.5);
+            opacity: 0.5;
+            filter: blur(16px);
+        }
+    }
+}
