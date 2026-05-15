@@ -437,6 +437,7 @@ footer .ctn-contact .ctn-logo-reseaux:hover .Floteur{
     display: grid;
 }
 #ctn-menu-mobile{
+    display: none;
     position: fixed;
     top: 5rem;
     left: 2rem; 
