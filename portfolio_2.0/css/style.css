@@ -447,7 +447,7 @@ footer .ctn-contact .ctn-logo-reseaux:hover .Floteur{
     z-index: 10;
 }
 #ctn-menu-mobile nav{
-    display: none;
+    display: flex;
     flex-direction: column;
     padding: 0.5rem;
 }
